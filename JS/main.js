@@ -15,7 +15,7 @@ $(document).ready(function(){
     //Cambios de estilos segun escroll
     $(window).on("scroll", function(){
         var posicion= $("#primera").offset();
-        
+
         if($(window).scrollTop() > posicion.top - 50){
             $("header").removeClass("blanco")
         } else {
@@ -23,13 +23,30 @@ $(document).ready(function(){
         }
 });
 //Scroll suave
-$("a").on("cilck", function(){
-    if (this.has !== ""){
-        var has = this.has;
+$("a").on("click", function(){
+    if (this.hash !== ""){
+        var hash = this.hash;
         $("html, body").animate({
             //Objeto con propiedad y valor
             scrollTop: $(hash).offset().top
         },800);
     }
     });
+    //Pestañas (Tabs)
+    $(".tabs li").click(function(){
+        //Recoger en tabId el valor del atributo tab
+        var tabId = $(this).attr("tab");
+        //Elimina la clase current a pestañas y contenidos
+        $(".tabs li").removeClass ("current");
+        $(".tab-content").removeClass("current");
+        //Añade la clase current a la pestaña pulsada
+        $(this).addClass("current");
+        //Añade la clase current  al contenido con el mismo is que el valor de la variable
+        $("#"+tabId).addClass("current");
+    });
+    $(".btn-side").click(function(){
+        $(".menu3").animate({width:"toggle"},500);
+        $(".fa-arrow-circle-right").toggle();
+        $(".fa-arrow-circle-left").toggle();
+    })
 });

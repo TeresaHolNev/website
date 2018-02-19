@@ -160,7 +160,7 @@ img{
 /*Cabezera -barra de navegación*/
 
 header{
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
     height: 100px;
@@ -300,6 +300,13 @@ header.blanco{
 
 .menu2 ul a.aparicion{
     transform: translateX(0px);
+}
+.menu2 ul a:hover{
+    background-color: rgb(243, 71, 105);
+}
+
+.menu2 ul a.activo{
+    background-color: rgb(243, 71, 105);
 }
 
 .logo{
@@ -524,7 +531,109 @@ a.activo{
     font-size: 14px;
 }
 
-/*Estilos para contactos*/
+/*Estilos para página HTML5*/
+
+.fila2{
+    display: flex;
+}
+
+.tab-container{
+    flex-basis: 100%;
+    position:  relative;
+}
+
+.tabs{
+    list-style: none;
+    display: flex;
+}
+
+.tabs li{
+    color: crimson;
+    padding: 10px;
+    cursor: pointer;
+    height: 45px;
+}
+
+.tabs li.current{
+    border-radius: 10px 10px 0 0;
+    border-top: 1px solid crimson;
+    border-left: 1px solid crimson;
+    border-right: 1px solid crimson;
+    background-color: #ededed;    
+}
+
+.tab-content{
+    position: relative;             /*Para poder tapar tab-1, */
+    top: -1px;                     /* no se vea el borde*/
+    z-index: -1;                  /*y quede como pestaña*/
+    display: none;
+    background-color: #ededed;
+    padding: 15px;
+    border: 1px solid crimson;
+    height: 300px;
+}
+
+.tab-content.current{
+    display: block;
+}
+
+.menu3{
+    width: 240px;
+    display: none;
+}
+
+.menu3 ul{
+    display: flex;
+    flex-direction: column;
+    margin-top: 45px;
+    height: 300px;
+    overflow-y: scroll;
+}
+
+.menu3 ul a {
+    color: #3f3f3f;
+    font-size: 27px;
+    padding: 10px;
+}
+
+.menu3 ul a:hover{
+   color:crimson;
+}
+
+.menu3 ul::-webkit-scrollbar{
+    width: 10px;
+}
+/*Fondo del escroll*/
+
+.menu3 ul::-webkit-scrollbar-track{
+    background-color:#ededed;
+}
+
+/*Color scroll*/
+
+.menu3 ul::-webkit-scrollbar-thumb{
+    background-color: crimson;
+}
+
+.btn-side{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 45px;
+    background-color: crimson;
+    color: #3f3f3f;
+    border-radius: 10px 0 0 0;
+    font-size: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-arrow-circle-right{
+    display: none;
+}
+
+/*Estilos para página contactos*/
 
 .direccion{
     line-height: 2em;
@@ -554,10 +663,6 @@ a.activo{
 .legales ul{
     padding-left: 40px;
 }
-
-
-
-
 
 /*Media Queries*/
 
