@@ -1,0 +1,660 @@
+/*estilos generales*/
+
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+    color: #3f3f3f;
+    background-color: beige;
+}
+
+p{
+    line-height: 1.5em;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+    color:white;
+}
+
+a:hover{
+    color: crimson;; /*color/es corporativos*/
+}
+
+a .activo{
+    color:crimson;
+}
+
+@keyframes intermitente{
+    0%{opacity: 0;}
+    50%{opacity: 1;}
+    100%{opacity: 0;}
+}
+
+.fila{
+    margin: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.primera{
+    margin-top: 100px;
+}
+
+.segunda{
+    margin-top: 30px;
+}
+
+.fondo{
+    margin: 0;
+    padding: 60px 40px;
+    background-image: url("../Img/pool-802025_640.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;  /*efecto parallax*/
+}
+
+.col1{
+    padding: 10px;
+    flex-basis: 300px;
+    flex-grow: 1;
+}
+
+.col2{
+    padding: 10px;
+    flex-basis: 300px;
+    flex-grow: 2;
+}
+.col3{
+    padding: 10px;
+    flex-basis: 300px;
+    flex-grow: 3;
+}
+
+.centrado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.columna{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img{
+    max-width: 100%;
+}
+
+.boton{
+    color: black;
+    font-size: 22px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: grey;
+    margin: 20px;
+}
+
+.enviar{
+    background-color: crimson;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Indie Flower', cursive;
+    outline: none; /*Quita el azul del foco*/
+}
+
+.naranja{
+    background-color:grey;
+    color: black;
+}
+
+.amarillo{
+    background-color:grey ;
+    color: black;
+}
+
+.azul{
+    background-color:grey ;
+    color: black;
+}
+
+.naranja:hover{
+    background-color: orangered;
+}
+
+.amarillo:hover{
+    background-color: goldenrod;
+}
+
+.azul:hover{
+    background-color: rgb(9, 107, 204);
+}
+
+.pie{
+    display: flex;
+    align-items: flex-end;
+}
+
+.eslogan{
+    font-size: 40px;
+    padding: 20px;
+    background-color: rgba(127, 255, 212, 0.5);
+    border-radius: 40px;
+}
+
+.separador{
+    display: none;
+    border:solid 1px crimson;
+    width: 60%;
+}
+
+/*Cabezera -barra de navegación*/
+
+header{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #3f3f3f7c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow:0px 4px 4px crimson;
+    z-index: 100;
+    transition: all 300ms;
+}
+
+header.blanco{
+    box-shadow:initial;
+    background-color: initial;
+}
+
+.burger{
+    font-size: 34px;
+    display: none;
+}
+
+.blanco .burger{
+    color:white;
+}
+
+.blanco .burger:hover{
+    color:crimson;
+}
+/* Menú hamburguesa página nicio */
+.menu{
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 80%;
+    height: 100vh;
+    display: none;
+    background-color: crimson;
+    z-index: 10;
+}
+
+.cerrar{
+    font-size: 34px;
+    color: white;
+}
+
+.menu ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.menu ul a{
+    padding: 10px;
+}
+
+.menu ul a:hover{
+    background-color: rgb(243, 71, 105);
+}
+
+.menu ul a.activo{
+    background-color: rgb(243, 71, 105);
+}
+
+/* Menú hamburguesa páginas normales */
+.burger2{
+    display: none;
+}
+
+.burger2 .barra{
+    height: 4px;
+    width: 36px;
+    margin: 6px auto;
+    background-color: crimson;
+}
+
+.arriba, .media, .abajo{
+    transition: all 700ms ease;
+}
+
+.burger2.abierto .arriba{
+    transform: translateY(10px) rotateZ(45deg);
+}
+
+.burger2.abierto .media{
+    width: 0;
+}
+
+.burger2.abierto .abajo{
+    transform: translateY(-10px) rotateZ(-45deg);
+}
+
+.menu2{
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 80%;
+    height: calc(100vh - 105px);
+    background-color: crimson;
+    z-index: 10;
+    display: none;
+    box-shadow:0px 4px 4px crimson;
+    margin-top: 5px;
+}
+
+.menu2 ul{
+    display:flex;
+    flex-direction: column;
+}
+
+.menu2 ul a{
+    width: 100%;
+    padding: 10px 20px;
+    transform: translateX(-200px);
+}
+
+.menu2 ul a:nth-child(1){
+    transition: transform 500ms ease-in-out;
+}
+
+.menu2 ul a:nth-child(2){
+    transition: transform 700ms ease-in-out;
+}
+
+.menu2 ul a:nth-child(3){
+    transition: transform 900ms ease-in-out;
+}
+
+.menu2 ul a:nth-child(4){
+    transition: transform 1100ms ease-in-out;
+}
+
+.menu2 ul a:nth-child(5){
+    transition: transform 1300ms ease-in-out;
+}
+
+.menu2 ul a.aparicion{
+    transform: translateX(0px);
+}
+
+.logo{
+    font-size: 50px;
+    color: white;
+}
+
+.blanco .logo{
+    color: white;
+}
+
+.blanco .logo:hover{
+    color: crimson;
+}
+
+header nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav ul li{
+    padding: 0 15px;
+}
+
+.blanco header nav ul li a{
+    color: white;
+}
+
+.blanco header nav ul li a:hover{
+    color:crimson;
+}
+
+.blanco header nav ul li a.activo{
+    color:crimson;
+}
+
+/* Hero */
+
+.hero{
+    height: 100vh;
+    background-image: url("../Img/computer.jpg");
+    background-position: center left;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.hero h1{
+    color: white;
+    font-size: 50px;
+    line-height: 1.5em;
+    text-align: center;
+    padding: 0 10px;
+}
+
+h1:hover{
+    color:crimson;
+}
+
+.hero h2{
+    color: white;
+    line-height: 1.5em;
+    text-align: center;
+    padding: 0 10px;
+}
+
+h2:hover{
+    color: crimson;
+}
+
+.hero a{
+    color: white;
+    font-size: 50px;
+    margin-bottom: 60px;
+    animation-name: intermitente;
+    animation-duration: 1500ms;
+    animation-iteration-count: infinite;
+    line-height: 2em;
+}
+
+/*Formulario Newslatter*/
+.miniform{
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.miniform input{
+    border: 2px solid crimson;
+    color: white;
+    font-size: 22px;
+    padding: 10px;
+}
+
+.miniform.boton{
+    border: 2px solid crimson;
+    background-color: white;
+    color: white;
+    font-size: 22px;
+    padding: 10px;
+}
+
+.miniform p{
+    color: crimson;
+    font-size: 28px;
+}
+
+/*Footer*/
+
+footer{
+    background-color: rgb(94, 62, 68);
+    background-image: linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+    linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+    linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+    linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+    linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a), 
+    linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a);
+    background-size:80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.top{
+    height: 30px;
+    width: 30px;
+    background-color: rgb(94, 62, 68);
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);/*La mitad del ancho del elemento(al estar expresado en %)*/
+    font-size: 30px;
+    color: white; 
+    border-radius: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: intermitente;
+    animation-duration: 1500ms;
+    animation-iteration-count: infinite;
+    line-height: 2em;
+}
+
+footer p{
+    font-size: 18px;
+    padding: 5px;
+}
+
+.izdo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    flex-basis: 300px;
+    flex-grow: 1
+}
+
+.centro{
+    padding: 10px;
+    flex-basis: 300px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.centro a{
+    padding: 5px;
+    color: white;
+    font-size: 18px;
+}
+
+.centro a:hover{
+    color: crimson;
+}
+
+.centro a.activo{
+    color: crimson;
+}
+
+a.activo{
+    color: crimson;
+}
+
+.dcho{
+    padding: 10px;
+    flex-basis: 300px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.dcho a{
+    padding: 5px;
+    color: white;
+    font-size: 20px;
+    text-align: right;
+}
+
+.dcho a:hover{
+    color: crimson;
+}
+
+.copy{
+    padding: 5px ;    
+    width: 100%;   
+}
+
+.copy p{
+    text-align: center;
+    font-size: 14px;
+}
+
+/*Estilos para contactos*/
+
+.direccion{
+    line-height: 2em;
+}
+
+.legales h1{
+    font-size: 20px;
+    padding: 5px;
+
+}
+
+.legales h2{
+    font-size: 15px;
+    padding: 5px;
+
+}
+
+.legales p{
+    font-size: 13px;
+    padding: 5px;
+}
+
+.legales li{
+    font-size: 13px;
+    padding: 5px;
+}
+.legales ul{
+    padding-left: 40px;
+}
+
+
+
+
+
+/*Media Queries*/
+
+@media(max-width:720px){
+    .fila{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .col1 .col2 .col3{
+        flex-basis: initial;
+    }
+
+    .columna{
+        margin: 20px;
+    }
+
+    .separador{
+        display: initial;
+    }
+
+    .izdo{
+        margin-top: 20px;
+        text-align: center; 
+    }
+
+    .dcho{
+        text-align: center;
+    }
+}
+
+@media(max-width:640px){
+    .burger{
+        display: initial;
+    }
+    .burger2{
+        display: initial;
+    }
+    nav{
+        display: none;
+    }
+    .hero h1{
+        font-size: 36px;
+        text-align: center;
+    }
+    .hero h2{
+        font-size: 20px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .fondo{
+        padding: 0 20px;
+    }
+
+    .eslogan{
+        font-size: 30px;
+        margin: 0px;
+    }
+    .miniform{
+        text-align: center;
+    }
+
+    .izdo .centro .dcho{
+        flex-basis: 200px;
+        text-align: center;
+    }   
+    
+}
+
+@media(max-width:420px){
+    .fila{
+        margin:20px 0px 20px 0px;
+        font-size: 15px;
+    }
+
+    .fila{
+        margin:100px 0px 20px 0px;
+        font-size: 15px;
+    }
+
+    .miniform input{
+        font-size: 15px;
+    }
+    
+    .miniform.boton{
+        font-size: 15px;
+    }
+
+    .izdo{
+        margin-top: 20px;
+        text-align: center; 
+    }
+
+    .dcho{
+        text-align: center;
+    }
+}
+
