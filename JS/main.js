@@ -49,4 +49,11 @@ $("a").on("click", function(){
         $(".fa-arrow-circle-right").toggle();
         $(".fa-arrow-circle-left").toggle();
     })
+    //Ventana modal
+    $("#open").click(function(){
+        $(".modal, .overlay").addClass("visible");
+    });
+    $("#close, .overlay").click(function(){
+        $(".modal, .overlay").removeClass("visible");
+    });
 });

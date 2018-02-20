@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./CSS/estilo.css">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="./JS/Librerías/jquery-3.3.1.js"></script>
+    <script src="./JS/main.js"></script>
     <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -18,19 +20,47 @@
 </head>
 <body>
     <header>
-        <p class="burger">&#9776;</p>
-             <a href="/" class="logo">
+        <!-- Botón menú hamburguesa -->
+        <div class="burger2">
+            <div class="barra arriba"></div>
+            <div class="barra media"></div>
+            <div class="barra abajo"></div>
+        </div>     
+        <!-- Menú hamburguesa  -->
+        <div class="menu2">      
+            <ul>
+                <a href="index.html">Inicio</a>
+                <a href="./html5.html">Html5</a>
+                <a href="./css3.html">CSS</a>
+                <a href="./javascript.html"class="activo">JavaScript</a>
+                <a href="./contactos.html">Contactos</a>
+            </ul>
+        </div>
+            <a href="index.html" class="logo">
                 <i class="fas fa-desktop"></i>
             </a>
-         <nav>
+        <nav>
             <ul>
-                <li> <a href="/">Inicio</a></li>
+                <li> <a href="index.html">Inicio</a></li>
                 <li> <a href="./html5.html">Html5</a></li>
                 <li> <a href="./css3.html">CSS</a></li>
                 <li> <a href="./javascript.html" class="activo">JavaScript</a></li>
                 <li> <a href="./contactos.html">Contactos</a></li>
             </ul>
         </nav>
-    </header>    
+    </header>
+    <div class="fila primera">
+        <h1>JavaScript</h1>
+    </div>  
+    <div class="fila">
+        <div class="overlay"></div>
+        <button class="boton naranja" id="open">Más información</button>
+        <div class="modal">
+            <p class="modal-header"><i class="fas fa-info"></i></p>
+            <hr>
+            <p>Próximamente toda la información de JavaScript</p>
+            <button class="boton naranja" id="close">De acuerdo</button>
+        </div>
+</div>
 </body>
 </html>

@@ -46,7 +46,7 @@ a .activo{
 }
 
 .primera{
-    margin-top: 100px;
+    margin-top: 120px;
 }
 
 .segunda{
@@ -102,6 +102,7 @@ img{
     border-radius: 5px;
     background-color: grey;
     margin: 20px;
+    cursor: pointer;
 }
 
 .enviar{
@@ -170,7 +171,7 @@ header{
     align-items: center;
     padding: 0 20px;
     box-shadow:0px 4px 4px crimson;
-    z-index: 100;
+    z-index: 5;
     transition: all 300ms;
 }
 
@@ -538,7 +539,8 @@ a.activo{
 }
 
 .tab-container{
-    flex-basis: 100%;
+    flex-basis: 80%;        /*Medida de referencia*/
+    flex-grow: 1;           /*Crecer todo lo que pueda en la proporción indicada*/
     position:  relative;
 }
 
@@ -578,7 +580,7 @@ a.activo{
 }
 
 .menu3{
-    width: 240px;
+    width: 20%;
     display: none;
 }
 
@@ -603,15 +605,12 @@ a.activo{
 .menu3 ul::-webkit-scrollbar{
     width: 10px;
 }
-/*Fondo del escroll*/
 
-.menu3 ul::-webkit-scrollbar-track{
+.menu3 ul::-webkit-scrollbar-track{         /*Fondo del escroll*/
     background-color:#ededed;
 }
 
-/*Color scroll*/
-
-.menu3 ul::-webkit-scrollbar-thumb{
+.menu3 ul::-webkit-scrollbar-thumb{         /*Color scroll*/
     background-color: crimson;
 }
 
@@ -632,6 +631,51 @@ a.activo{
 .fa-arrow-circle-right{
     display: none;
 }
+
+/*Estilos para página JavaScript*/
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    z-index: -1;
+    transition: all 500ms ease;
+}
+
+.overlay.visible{
+    opacity: 1;
+    z-index: 9;
+}
+
+.modal{
+    position: fixed;    /*Respecto al viewport*/
+    top: 50%;       /*En el elemento en el que está*/
+    left: 50%;
+    transform: translate(-50%,-50%);    /*sobre el propio elemento*/
+    width: 300px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.400);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10;
+    transition: all 500ms ease;
+    background-color: white;
+}
+
+.modal.visible{
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-header{
+    font-size: 30px;
+    padding: 15px;
+    color: crimson;
+}
+
 
 /*Estilos para página contactos*/
 
