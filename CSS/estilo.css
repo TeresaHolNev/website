@@ -192,6 +192,7 @@ header.blanco{
 .blanco .burger:hover{
     color:crimson;
 }
+
 /* Menú hamburguesa página nicio */
 .menu{
     position: absolute;
@@ -228,6 +229,7 @@ header.blanco{
 }
 
 /* Menú hamburguesa páginas normales */
+
 .burger2{
     display: none;
 }
